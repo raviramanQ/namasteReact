@@ -1,0 +1,20 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "learning react from Akshay saini",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raviramanQ/namasteReact.git"
+  },
+  "keywords": [],
+  "author": "Ravi Raman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raviramanQ/namasteReact/issues"
+  },
+  "homepage": "https://github.com/raviramanQ/namasteReact#readme"
+}
