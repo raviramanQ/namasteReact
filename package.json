@@ -16,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/raviramanQ/namasteReact/issues"
   },
-  "homepage": "https://github.com/raviramanQ/namasteReact#readme"
+  "homepage": "https://github.com/raviramanQ/namasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 Chrome versions"
+    
+  ]
 }

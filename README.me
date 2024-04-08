@@ -17,5 +17,82 @@ bundler => a bundlers helps us to make our code manageable i.e; it bundles our a
 
 ex:- vite , webpack  * (create react app usse webpack by default ), parcel 
 
+### npm install -D parcel  (** here i want parcel as a dev dependency )
+our app installing parcel from there npm which is on remote server.
+
+-D (dev)
+
+there are two tyes of packages or dependendies 
+dev dependencies  (required in development phase)
+normal dependencies (used in production also)
+
+package.json file
+^ ----  caret sign for minor version difference(automatically upgrade  upto minor version)
+
+~ =====>> tilde sign for major version change
+
+
+## package-lock.json => keeps the track that, which exact version has been used at the time of development and on production.(integrity keep the hash key to verify version)
+
+## Transitive dependencies => our project has package.json and their dependencies have their package.json and all the other dependencies has their own package.jsons. this is called as transitive dependencies.
+
+## node_modules => it is a collection of dependencies. it's a kind of database of all our files or all our codes. actual code there.
+
+## [npm install] will recreate node-modules for me.
+
+## [npx parcel index.html]
+
+## note ==> when you have to execute a package you use command (npx)  whereas (npm) command use to install package.
+
+## one way to bring react in our project is (CDN links) ** even though it is not an ideal way (becoz it makes an network call). Another way npm.
+## command to install (npm install react) here it is a normal dependency. ** react insatlled in node_modules. 
+## install react dom (npm i react-dom).
+
+...
+# parcel uses:-  - ## READ PARCEL DOCUMENTATION
+
+- Dev Build
+- Local server
+- HMR = Hot Module Replacement
+- File Watching Algorithm - written in c++
+- Caching - Faster Build
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree shaking - remove unsued code for you
+
+## dist => when parcel generates a development build it puts in dist folder.
+
+## ** When you refresh the page using save then it uses the parcel-cache and dist to update it using hot modules Replacement (HMR). 
+
+dist make three main files:-
+ 
+one html file, one js file and one css file (suppose your project has multiple file it will compress it into these three files)
+
+how to make dev build :- npx parcel index.html
+how to make production build :- npx parcel build index.html
+
+## ** anything that can be automatically generated you don't have to push on github. becoz i have sufficient information to regenerate it.
+
+
+Browsers list:- 
+
+## you will tell your app which browser to support
+## -->>  "last two versions"
+
+
+
+
+
+
+
+
 
 

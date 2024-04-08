@@ -1,3 +1,6 @@
+import React from "react";
+import  ReactDOM  from "react-dom/client";
+
 let header = React.createElement(
     
     "h1",
@@ -12,9 +15,12 @@ let header = React.createElement(
     ]
     );
 
+
     console.log(header); // {} object always 
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(header);
+
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(header);
 
 // react element always return object @@@ above header returns object.
 
