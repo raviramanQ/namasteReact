@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "learning react from Akshay saini",
   "main": "App.js",
+  "start": "parcel index.html",
+
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html", 
     "test": "jest"
   },
   "repository": {
