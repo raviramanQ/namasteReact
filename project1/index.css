@@ -1,12 +1,19 @@
 .header {
 display:flex;
+background-color: rgb(10, 211, 218);
 justify-content: space-between;
 border:1px solid black;
+height: 130px;
 }
 
 .logo {
      width:160;
+     height: 100%;
 
+}
+
+.nav-items{
+     padding: 0px 20px;
 }
 
 .nav-items > ul {
@@ -22,8 +29,44 @@ border:1px solid black;
      margin:10px;
 }
 
-.res-card{
-     width: 200px;
-     height: 300px;
+.res-container{
+     display: flex;
+     flex-wrap: wrap;
+
+}
+
+.res-card {
+     margin:5px;
+     padding:5px;
+     width: 176;
+     /* height: 300px;     */
+}
+
+.res-card :hover
+{    cursor: pointer;
      border:1px solid black;
 }
+.res-logo {
+     width : 100%;
+     height: 40%;
+    
+}
+
+.res-card {
+     background-color: rgb(116 213 245 / 70%);
+ }
+
+
+ .res-card {
+     /* your existing styles */
+     /* Add the following styles for adjusting the height and overflow */
+     /* height: 300px; /* or adjust as necessary */
+     /* overflow: scroll; or hidden if you don't want scrollbars */ 
+ }
+ 
+ .cuisines-container {
+     /* max-height: 100px; or adjust as necessary */
+     /* overflow: scroll; or hidden if you don't want scrollbars */
+ }
+ 
+
