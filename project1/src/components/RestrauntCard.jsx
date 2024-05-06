@@ -1,7 +1,7 @@
 import { CDN_PATH } from "../utils/Constant";
 
 const RestaurantCard = (props) => {
-     console.log("=======>>>>",props);
+     // console.log("=======>>>>",props);
      return (
 <div className="res-card" >
 <img 
