@@ -24,7 +24,7 @@ const fetchData = async () =>{
      console.log('new=====>>>>>>',mmmm.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info);
 
 
-     setJsondata(mmmm.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+     setJsondata(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 };
 
 if(data_json1.length === 0)
