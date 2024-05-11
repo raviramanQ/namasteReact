@@ -57,21 +57,25 @@ height: 130px;
  }
 
 
- .res-card {
+ /* .res-card {
      /* your existing styles */
      /* Add the following styles for adjusting the height and overflow */
      /* height: 300px; /* or adjust as necessary */
      /* overflow: scroll; or hidden if you don't want scrollbars */ 
- }
  
- .cuisines-container {
+ 
+ /* .cuisines-container  */
      /* max-height: 100px; or adjust as necessary */
-     /* overflow: scroll; or hidden if you don't want scrollbars */
- }
+     /* overflow: scroll; or hidden if you don't want scrollbars 
+ } */
 
  .filter-btn {
      margin: 10px;
      cursor: pointer;
+ }
+
+ .search-box-com {
+     margin: 10px;
  }
 
  .shimmer-container {
@@ -93,3 +97,7 @@ height: 130px;
      padding: 0 15px;
  }
 
+ .filter {
+     display: flex;
+
+ }

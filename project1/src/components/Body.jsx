@@ -6,10 +6,17 @@ import Shimmer from "./Shimmer";
 const Body = () => {
 
 // Local state Variable -> super powerful variable
-// const [data_json1,setJsondata] = useState(data_json);  no longer need this
+// const [ListofRestaurants,setListOfRestaurants] = useState(data_json);  no longer need this
 
-const [data_json1,setJsondata] = useState([]); 
-console.log(data_json1);
+const [ListofRestaurants,setListOfRestaurants] = useState([]); 
+const [FilterRestaurant,setFilterRestaurant] = useState([]); 
+
+const [searchText,setSearchData] = useState(""); 
+
+// whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
+console.log("ravi test");
+
+// console.log(ListofRestaurants);
 
 useEffect(()=>{
      fetchData();
@@ -18,16 +25,15 @@ useEffect(()=>{
 
 const fetchData = async () =>{
      const data = await fetch("https://www.swiggy.com/api/seo/getListing?lat=28.67003492726483&lng=77.11469986756225");
-// console.log('llllllllllllll',data);return;
+
      const mmmm = await data.json();
-     console.log(mmmm);
-     console.log('new=====>>>>>>',mmmm.data.success.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info);
+   
+     setListOfRestaurants(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+     setFilterRestaurant(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
-
-     setJsondata(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 };
 
-if(data_json1.length === 0)
+if(ListofRestaurants.length === 0)
 {
 //     return <h1>Loading...</h1>;
 return <Shimmer></Shimmer>;
@@ -37,22 +43,40 @@ return <Shimmer></Shimmer>;
      return (
           <div className="body">
                <div className="filter">
+                    <div className="search-box-com">
+                         <input type="text" className="search-box" vlaue = {searchText} onChange={(e)=>{
+                              setSearchData(e.target.value);
+                         }}></input>
+                         <button 
+                         onClick={(e)=>{
+
+                              // console.log('line onclick==>>',searchText);
+                              // setListOfRestaurants(searchText);
+
+                              const FilterRestaurant = ListofRestaurants.filter(
+                                   (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                              );
+                              setFilterRestaurant(FilterRestaurant);
+                         }}
+                         >
+                          Search</button>
+                    </div>
 
                     <button className="filter-btn" onClick={()=>{
-                        const data_json2 = data_json1.filter((res) => res.info.avgRating > 4.3);
-                         setJsondata(data_json2);
-                         // console.log('kkkkkkkkkkkkkkkkkkkk',data_json1);
+                        const data_json2 = ListofRestaurants.filter((res) => res.info.avgRating > 4.3);
+                         setListOfRestaurants(data_json2);
+                         // console.log('kkkkkkkkkkkkkkkkkkkk',ListofRestaurants);
 
                     }}> Top Rated Restaurants </button>
                </div>
                <div className="res-container">
                     
                     {/* <RestaurantCard
-                    resData = {data_json1[0]}
+                    resData = {ListofRestaurants[0]}
                     /> */}
 
                     {
-                       data_json1.map((datas)=>(<RestaurantCard key={datas.info.id}  resData={datas}/>))
+                       FilterRestaurant.map((datas)=>(<RestaurantCard key={datas.info.id}  resData={datas}/>))
                     }
                     
 
