@@ -64,7 +64,7 @@ return <Shimmer></Shimmer>;
 
                     <button className="filter-btn" onClick={()=>{
                         const data_json2 = ListofRestaurants.filter((res) => res.info.avgRating > 4.3);
-                         setListOfRestaurants(data_json2);
+                        setFilterRestaurant(data_json2);
                          // console.log('kkkkkkkkkkkkkkkkkkkk',ListofRestaurants);
 
                     }}> Top Rated Restaurants </button>
