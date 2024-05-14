@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestrauntCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 // import data_json from "../utils/MockData"; no longer need this now 
 
 const Body = () => {
@@ -76,7 +77,13 @@ return <Shimmer></Shimmer>;
                     /> */}
 
                     {
-                       FilterRestaurant.map((datas)=>(<RestaurantCard key={datas.info.id}  resData={datas}/>))
+                       FilterRestaurant.map((datas)=>(
+                         <Link 
+                         key={datas.info.id} 
+                         to={"/restaurant/"+ datas.info.id}>
+                       <RestaurantCard  resData={datas}/>
+                       </Link>
+                       ))
                     }
                     
 
