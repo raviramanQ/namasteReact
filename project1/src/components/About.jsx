@@ -1,6 +1,7 @@
 import React from "react";
 import User from "./User";
 import UserClass from "./UserClass";
+// import TestuserClass from "./TestuserClass";
 
 class about extends React.Component{
 
@@ -22,6 +23,8 @@ class about extends React.Component{
          <User name={"Vicky   (function)"} location = {"Mumbai"} contact={"+91 8851048263"}/>
          <br/>
          <UserClass name={"Ram  (Class)"} location = {"Ayodhya"} contact={"+91 9999999999"}/>
+         {/* <TestuserClass name={"Sita  (Class)"} location = {"Mithla"} contact={"+91 8888888888"}/> */}
+
          </div>
       );
    };

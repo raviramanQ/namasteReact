@@ -1,6 +1,6 @@
 import React from "react";
 
-class UserClass extends React.Component{
+class TestuserClass extends React.Component{
 
 
 // Summary
@@ -17,26 +17,16 @@ class UserClass extends React.Component{
      //   console.log(props);
      this.state = {
           counter :0,
-          counter2:2,
-          userInfo:{
-                    
-               name:"Dummy",
-               location:"Bharat"
-          }
+          counter2:2
      };
      };
 
     async componentDidMount(){
           console.log(this.props.name+"child component did mount");
 
-          const data = await fetch("https://api.github.com/users/raviramanQ");
-          const json = await data.json();
-          console.log(json);
-
-          this.setState(
-               {
-          userInfo :json,
-          });
+          // const data = await fetch("https://api.github.com/users/raviramanQ");
+          // const json = await data.json();
+          // console.log(json);
      }
 
      // *** lifecycle method for child called after parent
@@ -44,23 +34,20 @@ class UserClass extends React.Component{
 
 
      render(){
-          // console.log(this.props.name+'child render');
-
-          // const {contact} = this.props;
+          console.log(this.props.name+'child render');
+          const {name,location,contact} = this.props;
           const {counter,counter2} = this.state
-          // debugger;
-
           return(
                <div className="user-card">
                    
                     <h1>
-                         Name: Class {this.state.userInfo.name}
+                         Name: Class {name}
                     </h1>
                     <h2>
-                         {/* Location: Class {this.state} */}
+                         Location: Class {location}
                     </h2>
                     <h3>
-                         {/* Contact: Class {contact} */}
+                         Contact: Class {contact}
                     </h3>
                     <h1>
                          test: {counter}
@@ -80,4 +67,4 @@ class UserClass extends React.Component{
      };
 };
 
-export default UserClass;
+export default TestuserClass;
