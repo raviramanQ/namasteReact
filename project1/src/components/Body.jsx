@@ -2,7 +2,9 @@ import RestaurantCard from "./RestrauntCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnLineStatus";
 // import data_json from "../utils/MockData"; no longer need this now 
+// console.log(useOnlineStatus);
 
 const Body = () => {
 
@@ -32,6 +34,15 @@ const fetchData = async () =>{
      setListOfRestaurants(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
      setFilterRestaurant(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
+};
+
+const onLineStatus = useOnlineStatus();
+// console.log(onLineStatus);
+if(onLineStatus === false)
+{
+    return(
+     <h2>Sorry Your internet connection is off</h2>
+    ) ;
 };
 
 if(ListofRestaurants.length === 0)
