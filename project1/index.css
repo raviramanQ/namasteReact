@@ -1,3 +1,21 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 .header {
 display:flex;
 background-color: rgba(219, 216, 216, 0.836);
@@ -40,7 +58,7 @@ height: 130px;
      padding:5px;
      width: 176;
      /* height: 300px;     */
-}
+/*}
 
 .res-card :hover
 {    cursor: pointer;
@@ -70,7 +88,7 @@ height: 130px;
      /* max-height: 100px; or adjust as necessary */
      /* overflow: scroll; or hidden if you don't want scrollbars 
  } */
-
+/*
  .filter-btn {
      margin: 10px;
      cursor: pointer;
@@ -88,7 +106,7 @@ height: 130px;
  .shimmer-card {
      /* margin :20px;
      width:176px;
-     height:400px; */
+     //height:400px; 
      margin:5px;
      width: 186px;
      height:400px;
@@ -103,5 +121,7 @@ height: 130px;
      display: flex;
 
  }
-
+*/
  
+
+
