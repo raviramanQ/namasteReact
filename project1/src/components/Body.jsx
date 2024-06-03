@@ -54,12 +54,13 @@ return <Shimmer></Shimmer>;
 
      return (
           <div className="body">
-               <div className="filter">
-                    <div className="search-box-com">
-                         <input type="text" className="search-box" vlaue = {searchText} onChange={(e)=>{
+               <div className="filter flex">
+                    <div className="search m-4 p-4">
+                         <input type="text" className="border border-solid border-black" value = {searchText} onChange={(e)=>{
                               setSearchData(e.target.value);
                          }}></input>
                          <button 
+                         className="px-4 py-2 bg-green-100 m-4 rounded-xl"
                          onClick={(e)=>{
 
                               // console.log('line onclick==>>',searchText);
@@ -73,15 +74,18 @@ return <Shimmer></Shimmer>;
                          >
                           Search</button>
                     </div>
+                    <div className="search m-4 p-4 flex items-center">
 
-                    <button className="filter-btn" onClick={()=>{
+                    <button className="px-4 py-2 bg-gray-100 rounded-xl" onClick={()=>{
                         const data_json2 = ListofRestaurants.filter((res) => res.info.avgRating > 4.3);
                         setFilterRestaurant(data_json2);
                          // console.log('kkkkkkkkkkkkkkkkkkkk',ListofRestaurants);
 
                     }}> Top Rated Restaurants </button>
+                    </div>
+
                </div>
-               <div className="res-container">
+               <div className="flex flex-wrap">
                     
                     {/* <RestaurantCard
                     resData = {ListofRestaurants[0]}

@@ -3,13 +3,13 @@ import { CDN_PATH } from "../utils/Constant";
 const RestaurantCard = (props) => {
      // console.log("=======>>>>",props);
      return (
-<div className="res-card" >
+<div className="m-2 p-2 w-[200px] rounded-lg bg-gray-200 hover:bg-gray-400" >
 <img 
-className="res-logo"
+className="w-[200px] rounded-lg"
 alt = "res-logo"
  src={CDN_PATH+props.resData.info.cloudinaryImageId}></img>
 
-     <h3> {props.resData.info.name}</h3>
+     <h3 className="font-bold py-2 text-lg"> {props.resData.info.name}</h3>
      {/* <div className="cuisines-container">
 
      <h4> {props.resData.info.cuisines.join(",")}</h4> 
