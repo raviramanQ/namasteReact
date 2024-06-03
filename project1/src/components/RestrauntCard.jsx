@@ -27,4 +27,15 @@ alt = "res-logo"
      );
 };
 
+export const withPromotedLabel = (RestaurantCard) => {
+     return (props) => {
+          return (
+               <div>
+                    <label className="absolute bg-red-600 text-white m-0 p-1 rounded-lg">Promoted</label>
+                    <RestaurantCard {...props} />
+               </div>
+          );
+     };
+};
+
 export default RestaurantCard;

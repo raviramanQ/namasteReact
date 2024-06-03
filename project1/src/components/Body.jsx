@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestrauntCard";
+import RestaurantCard,{withPromotedLabel} from "./RestrauntCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,8 +11,11 @@ const Body = () => {
 // Local state Variable -> super powerful variable
 // const [ListofRestaurants,setListOfRestaurants] = useState(data_json);  no longer need this
 
+
 const [ListofRestaurants,setListOfRestaurants] = useState([]); 
 const [FilterRestaurant,setFilterRestaurant] = useState([]); 
+// console.log('restaurant',ListofRestaurants);
+const LabelledRestaurantCard = withPromotedLabel(RestaurantCard);
 
 const [searchText,setSearchData] = useState(""); 
 
@@ -35,6 +38,8 @@ const fetchData = async () =>{
      setFilterRestaurant(mmmm?.data?.success?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
 };
+
+console.log('llll',FilterRestaurant);
 
 const onLineStatus = useOnlineStatus();
 // console.log(onLineStatus);
@@ -95,8 +100,13 @@ return <Shimmer></Shimmer>;
                        FilterRestaurant.map((datas)=>(
                          <Link 
                          key={datas.info.id} 
-                         to={"/restaurant/"+ datas.info.id}>
-                       <RestaurantCard  resData={datas}/>
+                         to={"/restaurant/"+ datas.info.id}
+                         >
+
+                              {
+                              datas.info.avgRatingString > 4.2 ? (<LabelledRestaurantCard resData={datas}/>):( <RestaurantCard  resData={datas}/>)
+                              }
+                      
                        </Link>
                        ))
                     }
