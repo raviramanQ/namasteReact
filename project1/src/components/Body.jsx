@@ -39,8 +39,6 @@ const fetchData = async () =>{
 
 };
 
-console.log('llll',FilterRestaurant);
-
 const onLineStatus = useOnlineStatus();
 // console.log(onLineStatus);
 if(onLineStatus === false)
@@ -90,7 +88,7 @@ return <Shimmer></Shimmer>;
                     </div>
 
                </div>
-               <div className="flex flex-wrap">
+               <div className="flex flex-wrap gap-2 ">
                     
                     {/* <RestaurantCard
                     resData = {ListofRestaurants[0]}
@@ -98,7 +96,7 @@ return <Shimmer></Shimmer>;
 
                     {
                        FilterRestaurant.map((datas)=>(
-                         <Link 
+                         <Link  className="bg-gray-200 hover:bg-gray-400 border "
                          key={datas.info.id} 
                          to={"/restaurant/"+ datas.info.id}
                          >
