@@ -1,7 +1,12 @@
 import { CDN_PATH } from "../utils/Constant";
+import { useContext } from "react";
+import UserContext from "../utils/UseContext";
 
 const RestaurantCard = (props) => {
      // console.log("=======>>>>",props);
+
+     const {loggedInUser} = useContext(UserContext)
+
      return (
 <div className=" m-2 p-2 w-[200px] rounded-lg " >
 <img 
@@ -23,6 +28,8 @@ height="150px"
             }
      <h4> {props.resData.info.avgRatingString} Stars</h4>
      <h4> {props.resData.info.sla.slaString}</h4>
+     <h4> {loggedInUser}</h4>
+
 
       
 </div>

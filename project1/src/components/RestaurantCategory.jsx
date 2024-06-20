@@ -3,13 +3,17 @@ import ItemList from "./ItemList";
 
 const RestaurantCategory = (data) => {
      console.log('data===>>>',data);
+     // console.log('datammmm===>>>',data.showItem);
 
-     const [showItem,setShowItem] = useState(false);
+     // const showItems = data.showItem;
+
+
+     // const [showItem,setShowItem] = useState(false);
 
      const handleClick = ()=>{
           console.log('raja means self pain ');
 
-          setShowItem(!showItem);
+          data.setShowIndex();
 
 
      }
@@ -19,9 +23,9 @@ const RestaurantCategory = (data) => {
      <div className="w-6/12 mx-auto my-4 bg-green-50 shadow-lg p-4 ">
       <div className="flex justify-between cursor-pointer" onClick={handleClick}>
        <span className="font-bold text-lg">{data?.data?.title} ({data?.data?.itemCards.length})</span>
-       <span>🔽</span>
+       <span>⬇️</span>
        </div>
-       {showItem && <ItemList items= {data.data.itemCards}/>}
+       {data.showItem && <ItemList items= {data.data.itemCards}/>}
 
      </div>
      {/*Accordion Body*/ }

@@ -5,10 +5,15 @@ const User = ({name,location,contact}) =>{
      const [counter] = useState(0);
      const [counter2] = useState(2);
 
-     useEffect()
-     {
-          console.log('test1111');
-     }
+     // useEffect()
+     // {
+     //      console.log('test1111');
+     // }
+
+     useEffect(()=>{
+
+     });
+ 
 
 // console.log(props);
      return(

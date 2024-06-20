@@ -1,5 +1,5 @@
 
-import React,{Suspense, lazy} from "react";
+import React,{Suspense, lazy, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header.jsx";
 import Body from "./components/Body.jsx";
@@ -10,7 +10,8 @@ import RestaurantMenu from "./components/RestaurantMenu.jsx";
 import {createBrowserRouter, RouterProvider,Outlet} from "react-router-dom";
 // import Grocery from "./components/Grocery.jsx";
 
-// const Header = () =>{
+import UserContext from "./utils/UseContext.jsx";
+// const Header = () =>{    
 //      return(
 //           <div className="header">
 //                <div className="logo-container">
@@ -1751,12 +1752,38 @@ const Grocery = lazy(()=> import("./components/Grocery.jsx"));
 
 
 const AppLayout = () => {
+    const [userName,setUserName] = useState();
+
+    const [userName2,setUserName2] = useState();
+
+
+
+    useEffect(()=>{
+
+        const data ={
+            name:'vicky',
+            naam:'Ravi Raman'
+        };
+
+        setUserName(data.name);
+        setUserName2(data.naam)
+    },[]);
 
      return (
+        <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
+
      <div className ="app">
-          <Header/>
-          <Outlet />
+                <UserContext.Provider value={{loggedInUser:userName2}}>
+
+                  <Header/>
+                  </UserContext.Provider>
+
+        <Outlet />
+
      </div>
+     </UserContext.Provider>
+
+    
      );
 };
 

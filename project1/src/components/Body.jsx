@@ -1,8 +1,9 @@
 import RestaurantCard,{withPromotedLabel} from "./RestrauntCard";
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnLineStatus";
+import UserContext from "../utils/UseContext";
 // import data_json from "../utils/MockData"; no longer need this now 
 // console.log(useOnlineStatus);
 
@@ -48,6 +49,9 @@ if(onLineStatus === false)
     ) ;
 };
 
+
+const {loggedInUser,setUserName} = useContext(UserContext);
+
 if(ListofRestaurants.length === 0)
 {
 //     return <h1>Loading...</h1>;
@@ -76,6 +80,7 @@ return <Shimmer></Shimmer>;
                          }}
                          >
                           Search</button>
+
                     </div>
                     <div className="search m-4 p-4 flex items-center">
 
@@ -85,6 +90,13 @@ return <Shimmer></Shimmer>;
                          // console.log('kkkkkkkkkkkkkkkkkkkk',ListofRestaurants);
 
                     }}> Top Rated Restaurants </button>
+                    </div>
+
+                    <div className="search m-4 p-4 flex items-center">
+                         <label className="px-2">UserName:</label>
+                         <input className="border border-blue-800 px-2"
+                         value={loggedInUser}
+                         onChange={(e) => setUserName(e.target.value)}></input>
                     </div>
 
                </div>
