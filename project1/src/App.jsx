@@ -11,6 +11,12 @@ import {createBrowserRouter, RouterProvider,Outlet} from "react-router-dom";
 // import Grocery from "./components/Grocery.jsx";
 
 import UserContext from "./utils/UseContext.jsx";
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore.jsx";
+import Cart from "./components/Cart.jsx";
+
+
+// import appStore from "./utils/appStore.jsx";
 // const Header = () =>{    
 //      return(
 //           <div className="header">
@@ -1770,18 +1776,21 @@ const AppLayout = () => {
     },[]);
 
      return (
+        <Provider store={appStore}>
         <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
 
-     <div className ="app">
-                <UserContext.Provider value={{loggedInUser:userName2}}>
+        <div className ="app">
+                    <UserContext.Provider value={{loggedInUser:userName2}}>
 
-                  <Header/>
-                  </UserContext.Provider>
+                    <Header/>
+                    </UserContext.Provider>
 
-        <Outlet />
+            <Outlet />
 
-     </div>
-     </UserContext.Provider>
+        </div>
+        </UserContext.Provider>
+
+     </Provider>
 
     
      );
@@ -1823,6 +1832,10 @@ const appRouter = createBrowserRouter([
            {
                path:"/grocery",
                element: <Suspense fallback={<h1>Loading.....</h1>}><Grocery /></Suspense>,
+           },
+           {
+               path:"/cart",
+               element: <Cart />,
            },
           
           ],
