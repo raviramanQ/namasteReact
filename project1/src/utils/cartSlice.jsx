@@ -7,6 +7,8 @@ const cartSlice = createSlice({
      },
      reducers: {
           addItem:(state,action)=>{
+
+               // redux toolkit uses immer behind the scene
                state.items.push(action.payload);
           },
           removeItem:(state,action)=>{
@@ -14,7 +16,15 @@ const cartSlice = createSlice({
 
           },
           clearCart:(state,action)=>{
-               state.items.length=0;
+
+               /*
+               state = []
+                we cannot make our state empty like this becoz my state is local variable . it will not mutate the original state.               
+               */
+
+               // state.items.length=0;
+
+                return { items: [] };  //this new [] will be replaced inside originalstate = []
           },
 
      },
